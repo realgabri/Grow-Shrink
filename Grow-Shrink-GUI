@@ -1,0 +1,546 @@
+--grow + shrink GUI by nnrfz
+
+local TallPlusShort = Instance.new("ScreenGui")
+local Whol = Instance.new("Frame")
+local TitleLabel = Instance.new("TextLabel")
+local TopB = Instance.new("Frame")
+local GrowButton = Instance.new("TextButton")
+local CreditsG = Instance.new("TextLabel")
+local ShrinkInfo = Instance.new("TextButton")
+local MidB = Instance.new("Frame")
+local ShrinkButton = Instance.new("TextButton")
+local GrowInfo = Instance.new("TextButton")
+local BottomCredit = Instance.new("TextLabel")
+local Toggle = Instance.new("Frame")
+local hideshowbutton = Instance.new("TextButton")
+local ExtraStuff = Instance.new("TextButton")
+local dragme = Instance.new("TextLabel")
+local ExtraFrame = Instance.new("Frame")
+local checkit = Instance.new("TextLabel")
+local ComingSoon = Instance.new("TextLabel")
+local Tall_InfoReqs = Instance.new("Frame")
+local Info = Instance.new("TextLabel")
+local Reqs = Instance.new("TextLabel")
+local X = Instance.new("TextButton")
+local Short_InfoReqs = Instance.new("Frame")
+local Info_2 = Instance.new("TextLabel")
+local Reqs_2 = Instance.new("TextLabel")
+local X_2 = Instance.new("TextButton")
+local BTW = Instance.new("Frame")
+local TextLabel = Instance.new("TextLabel")
+local X_3 = Instance.new("TextButton")
+local TextLabel_2 = Instance.new("TextLabel")
+
+--Properties:
+
+TallPlusShort.Name = "TallPlusShort"
+TallPlusShort.Parent = game.CoreGui
+TallPlusShort.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Whol.Name = "Whol"
+Whol.Parent = TallPlusShort
+Whol.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Whol.BackgroundTransparency = 0.100
+Whol.BorderColor3 = Color3.fromRGB(18, 19, 24)
+Whol.BorderSizePixel = 5
+Whol.Position = UDim2.new(0.300413966, 0, 0.325127333, 0)
+Whol.Size = UDim2.new(0, 280, 0, 280)
+Whol.Draggable = true
+Whol.Active = true
+Whol.Selectable = true
+
+TitleLabel.Name = "TitleLabel"
+TitleLabel.Parent = Whol
+TitleLabel.BackgroundColor3 = Color3.fromRGB(71, 71, 71)
+TitleLabel.BackgroundTransparency = 0.150
+TitleLabel.BorderSizePixel = 0
+TitleLabel.Position = UDim2.new(0.042857144, 0, 0.0799999982, 0)
+TitleLabel.Size = UDim2.new(0, 255, 0, 30)
+TitleLabel.Font = Enum.Font.RobotoMono
+TitleLabel.Text = "Tall + Short GUI"
+TitleLabel.TextColor3 = Color3.fromRGB(197, 197, 197)
+TitleLabel.TextSize = 25.000
+
+TopB.Name = "TopB"
+TopB.Parent = Whol
+TopB.BackgroundColor3 = Color3.fromRGB(95, 95, 95)
+TopB.BorderSizePixel = 0
+TopB.Position = UDim2.new(0.0105447173, 0, 0.229966968, 0)
+TopB.Size = UDim2.new(0, 273, 0, 3)
+
+GrowButton.Name = "GrowButton"
+GrowButton.Parent = Whol
+GrowButton.BackgroundColor3 = Color3.fromRGB(101, 156, 139)
+GrowButton.BorderColor3 = Color3.fromRGB(60, 93, 91)
+GrowButton.BorderSizePixel = 3
+GrowButton.Position = UDim2.new(0.141235784, 0, 0.273848563, 0)
+GrowButton.Size = UDim2.new(0, 200, 0, 35)
+GrowButton.Font = Enum.Font.RobotoMono
+GrowButton.Text = "Be TALL"
+GrowButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+GrowButton.TextSize = 20.000
+GrowButton.MouseButton1Down:Connect(function()
+	--Shit ass script made by failedmite57926
+local LocalPlayer = game:GetService("Players").LocalPlayer
+local Character = LocalPlayer.Character
+local Humanoid = Character:FindFirstChildOfClass("Humanoid")
+
+function rm()
+    for i,v in pairs(Character:GetDescendants()) do
+        if v:IsA("BasePart") then
+            if v.Name == "Handle" or v.Name == "Head" then
+                if Character.Head:FindFirstChild("OriginalSize") then
+                    Character.Head.OriginalSize:Destroy()
+                end
+            else
+                for i,cav in pairs(v:GetDescendants()) do
+                    if cav:IsA("Attachment") then
+                        if cav:FindFirstChild("OriginalPosition") then
+                            cav.OriginalPosition:Destroy()
+                        end
+                    end
+                end
+                v:FindFirstChild("OriginalSize"):Destroy()
+                if v:FindFirstChild("AvatarPartScaleType") then
+                    v:FindFirstChild("AvatarPartScaleType"):Destroy()
+                end
+            end
+        end
+    end
+end
+
+rm() 
+wait(0.01)
+Humanoid:FindFirstChild("BodyProportionScale"):Destroy()
+wait(0.1)
+
+wait(0.3)
+Humanoid:FindFirstChild("HeadScale"):Destroy()
+wait(0)
+end)
+
+CreditsG.Name = "CreditsG"
+CreditsG.Parent = Whol
+CreditsG.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CreditsG.BackgroundTransparency = 1.000
+CreditsG.BorderSizePixel = 0
+CreditsG.Position = UDim2.new(0.117772371, 0, 0.00527632236, 0)
+CreditsG.Size = UDim2.new(0, 214, 0, 18)
+CreditsG.Font = Enum.Font.RobotoMono
+CreditsG.Text = "GUI by nnrfz"
+CreditsG.TextColor3 = Color3.fromRGB(126, 126, 126)
+CreditsG.TextSize = 14.000
+
+ShrinkInfo.Name = "ShrinkInfo"
+ShrinkInfo.Parent = Whol
+ShrinkInfo.BackgroundColor3 = Color3.fromRGB(203, 203, 96)
+ShrinkInfo.BorderColor3 = Color3.fromRGB(105, 107, 14)
+ShrinkInfo.BorderSizePixel = 3
+ShrinkInfo.Position = UDim2.new(0.221428573, 0, 0.841142774, 0)
+ShrinkInfo.Size = UDim2.new(0, 155, 0, 19)
+ShrinkInfo.Font = Enum.Font.RobotoMono
+ShrinkInfo.Text = "Info + Requirements"
+ShrinkInfo.TextColor3 = Color3.fromRGB(0, 0, 0)
+ShrinkInfo.TextSize = 16.000
+
+MidB.Name = "MidB"
+MidB.Parent = Whol
+MidB.BackgroundColor3 = Color3.fromRGB(95, 95, 95)
+MidB.BorderSizePixel = 0
+MidB.Position = UDim2.new(0.0105447173, 0, 0.59039557, 0)
+MidB.Size = UDim2.new(0, 273, 0, 3)
+
+ShrinkButton.Name = "Shrink Button"
+ShrinkButton.Parent = Whol
+ShrinkButton.BackgroundColor3 = Color3.fromRGB(139, 125, 181)
+ShrinkButton.BorderColor3 = Color3.fromRGB(65, 56, 94)
+ShrinkButton.BorderSizePixel = 3
+ShrinkButton.Position = UDim2.new(0.141235784, 0, 0.662848532, 0)
+ShrinkButton.Size = UDim2.new(0, 200, 0, 35)
+ShrinkButton.Font = Enum.Font.RobotoMono
+ShrinkButton.Text = "Be SHORT"
+ShrinkButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+ShrinkButton.TextSize = 20.000
+ShrinkButton.MouseButton1Down:Connect(function()
+
+local LocalPlayer = game:GetService("Players").LocalPlayer
+local Character = LocalPlayer.Character
+local Humanoid = Character:FindFirstChildOfClass("Humanoid")
+
+local function rm()
+ for i,v in pairs(Character:GetDescendants()) do
+  if v:IsA("BasePart") then
+   if v.Name ~= "Head" then
+    for i,cav in pairs(v:GetDescendants()) do
+     if cav:IsA("Attachment") then
+      if cav:FindFirstChild("OriginalPosition") then
+       cav.OriginalPosition:Destroy()
+      end
+     end
+    end
+    v:FindFirstChild("OriginalSize"):Destroy()
+    if v:FindFirstChild("AvatarPartScaleType") then
+     v:FindFirstChild("AvatarPartScaleType"):Destroy()
+    end
+   end
+  end
+ end
+end
+
+rm()
+wait(0.5)
+Humanoid:FindFirstChild("BodyTypeScale"):Destroy()
+wait(0.2)
+
+rm()
+wait(0.5)
+Humanoid:FindFirstChild("BodyWidthScale"):Destroy()
+wait(0.2)
+
+rm()
+wait(0.5)
+Humanoid:FindFirstChild("BodyDepthScale"):Destroy()
+wait(0.2)
+
+rm()
+wait(0.5)
+Humanoid:FindFirstChild("HeadScale"):Destroy()
+wait(0.2)
+end)
+
+GrowInfo.Name = "GrowInfo"
+GrowInfo.Parent = Whol
+GrowInfo.BackgroundColor3 = Color3.fromRGB(203, 203, 96)
+GrowInfo.BorderColor3 = Color3.fromRGB(105, 107, 14)
+GrowInfo.BorderSizePixel = 3
+GrowInfo.Position = UDim2.new(0.221428573, 0, 0.465857118, 0)
+GrowInfo.Size = UDim2.new(0, 155, 0, 19)
+GrowInfo.Font = Enum.Font.RobotoMono
+GrowInfo.Text = "Info + Requirements"
+GrowInfo.TextColor3 = Color3.fromRGB(0, 0, 0)
+GrowInfo.TextSize = 16.000
+
+BottomCredit.Name = "BottomCredit"
+BottomCredit.Parent = Whol
+BottomCredit.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+BottomCredit.BackgroundTransparency = 1.000
+BottomCredit.BorderSizePixel = 0
+BottomCredit.Position = UDim2.new(0.117772348, 0, 0.937419116, 0)
+BottomCredit.Size = UDim2.new(0, 214, 0, 12)
+BottomCredit.Font = Enum.Font.RobotoMono
+BottomCredit.Text = "DM gabri.alt#5916 for any questions"
+BottomCredit.TextColor3 = Color3.fromRGB(126, 126, 126)
+BottomCredit.TextSize = 14.000
+
+Toggle.Name = "Toggle"
+Toggle.Parent = TallPlusShort
+Toggle.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+Toggle.BackgroundTransparency = 0.250
+Toggle.BorderColor3 = Color3.fromRGB(20, 22, 36)
+Toggle.BorderSizePixel = 3
+Toggle.Position = UDim2.new(0.105189517, 0, 0.417886883, 0)
+Toggle.Selectable = true
+Toggle.Size = UDim2.new(0, 105, 0, 130)
+Toggle.Draggable = true
+Toggle.Active = true
+Toggle.Selectable = true
+
+hideshowbutton.Name = "hide/showbutton"
+hideshowbutton.Parent = Toggle
+hideshowbutton.BackgroundColor3 = Color3.fromRGB(208, 67, 67)
+hideshowbutton.BackgroundTransparency = 0.250
+hideshowbutton.BorderColor3 = Color3.fromRGB(113, 25, 25)
+hideshowbutton.BorderSizePixel = 3
+hideshowbutton.Position = UDim2.new(0.0605001338, 0, 0.0698689222, 0)
+hideshowbutton.Size = UDim2.new(0, 92, 0, 38)
+hideshowbutton.Font = Enum.Font.SourceSans
+hideshowbutton.Text = "Toggle GUI"
+hideshowbutton.TextColor3 = Color3.fromRGB(0, 0, 0)
+hideshowbutton.TextSize = 14.000
+
+ExtraStuff.Name = "ExtraStuff"
+ExtraStuff.Parent = Toggle
+ExtraStuff.BackgroundColor3 = Color3.fromRGB(121, 141, 179)
+ExtraStuff.BackgroundTransparency = 0.200
+ExtraStuff.BorderColor3 = Color3.fromRGB(52, 57, 100)
+ExtraStuff.BorderSizePixel = 3
+ExtraStuff.Position = UDim2.new(0.0602201074, 0, 0.644562185, 0)
+ExtraStuff.Size = UDim2.new(0, 93, 0, 38)
+ExtraStuff.Font = Enum.Font.RobotoCondensed
+ExtraStuff.Text = "Toggle Other Stuff!"
+ExtraStuff.TextColor3 = Color3.fromRGB(0, 0, 0)
+ExtraStuff.TextScaled = true
+ExtraStuff.TextSize = 20.000
+ExtraStuff.TextWrapped = true
+
+dragme.Name = "dragme"
+dragme.Parent = Toggle
+dragme.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+dragme.BackgroundTransparency = 1.000
+dragme.Position = UDim2.new(0.247619063, 0, 0.423076928, 0)
+dragme.Size = UDim2.new(0, 53, 0, 20)
+dragme.Font = Enum.Font.SourceSans
+dragme.Text = "drag me"
+dragme.TextColor3 = Color3.fromRGB(0, 0, 0)
+dragme.TextSize = 14.000
+dragme.TextTransparency = 0.500
+
+ExtraFrame.Name = "ExtraFrame"
+ExtraFrame.Parent = TallPlusShort
+ExtraFrame.BackgroundColor3 = Color3.fromRGB(255, 239, 114)
+ExtraFrame.BorderColor3 = Color3.fromRGB(116, 118, 5)
+ExtraFrame.BorderSizePixel = 4
+ExtraFrame.Position = UDim2.new(0.690620303, 0, 0.375311732, 0)
+ExtraFrame.Size = UDim2.new(0, 364, 0, 199)
+ExtraFrame.Visible = false
+ExtraFrame.Draggable = true
+ExtraFrame.Active = true
+ExtraFrame.Selectable = true
+
+checkit.Name = "checkit"
+checkit.Parent = ExtraFrame
+checkit.BackgroundColor3 = Color3.fromRGB(255, 252, 205)
+checkit.BorderColor3 = Color3.fromRGB(235, 238, 83)
+checkit.BorderSizePixel = 2
+checkit.Position = UDim2.new(0.223304838, 0, 0.0634030253, 0)
+checkit.Size = UDim2.new(0, 200, 0, 27)
+checkit.Font = Enum.Font.Unknown
+checkit.Text = "Extra Stuff"
+checkit.TextColor3 = Color3.fromRGB(0, 0, 0)
+checkit.TextSize = 21.000
+checkit.TextWrapped = true
+
+ComingSoon.Name = "Coming Soon..."
+ComingSoon.Parent = ExtraFrame
+ComingSoon.BackgroundColor3 = Color3.fromRGB(255, 252, 205)
+ComingSoon.BorderColor3 = Color3.fromRGB(235, 238, 83)
+ComingSoon.BorderSizePixel = 2
+ComingSoon.Position = UDim2.new(0.0172608756, 0, 0.289533585, 0)
+ComingSoon.Size = UDim2.new(0, 351, 0, 132)
+ComingSoon.Font = Enum.Font.Unknown
+ComingSoon.Text = "Coming soon..."
+ComingSoon.TextColor3 = Color3.fromRGB(0, 0, 0)
+ComingSoon.TextSize = 21.000
+ComingSoon.TextWrapped = true
+
+Tall_InfoReqs.Name = "Tall_InfoReqs"
+Tall_InfoReqs.Parent = TallPlusShort
+Tall_InfoReqs.BackgroundColor3 = Color3.fromRGB(121, 121, 121)
+Tall_InfoReqs.BackgroundTransparency = 0.300
+Tall_InfoReqs.BorderColor3 = Color3.fromRGB(84, 84, 84)
+Tall_InfoReqs.BorderSizePixel = 5
+Tall_InfoReqs.Position = UDim2.new(0.405446261, 0, 0.376558602, 0)
+Tall_InfoReqs.Size = UDim2.new(0, 245, 0, 198)
+Tall_InfoReqs.Visible = false
+Tall_InfoReqs.Draggable = true
+Tall_InfoReqs.Active = true
+Tall_InfoReqs.Selectable = true
+
+Info.Name = "Info"
+Info.Parent = Tall_InfoReqs
+Info.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Info.BackgroundTransparency = 0.300
+Info.BorderColor3 = Color3.fromRGB(106, 106, 106)
+Info.BorderSizePixel = 3
+Info.Position = UDim2.new(0.0461206548, 0, 0.0484676175, 0)
+Info.Size = UDim2.new(0, 222, 0, 75)
+Info.Font = Enum.Font.Unknown
+Info.Text = "Clicking \"Be TALL\" will make you tall. Click once for half height, spam click for full height."
+Info.TextColor3 = Color3.fromRGB(79, 79, 79)
+Info.TextSize = 15.000
+Info.TextWrapped = true
+Info.TextScaled = true
+
+Reqs.Name = "Reqs"
+Reqs.Parent = Tall_InfoReqs
+Reqs.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Reqs.BackgroundTransparency = 0.300
+Reqs.BorderColor3 = Color3.fromRGB(107, 107, 107)
+Reqs.BorderSizePixel = 3
+Reqs.Position = UDim2.new(0.0461206548, 0, 0.490581155, 0)
+Reqs.Size = UDim2.new(0, 222, 0, 68)
+Reqs.Font = Enum.Font.Unknown
+Reqs.Text = "Avatar Scale Requirements: HEIGHT 100%, WIDTH 100%, HEAD 100%, PROPORTIONS 0%, BODY  TYPE 100 %"
+Reqs.TextColor3 = Color3.fromRGB(118, 1, 1)
+Reqs.TextSize = 16.000
+Reqs.TextWrapped = true
+Reqs.TextScaled = true
+
+X.Name = "X"
+X.Parent = Tall_InfoReqs
+X.BackgroundColor3 = Color3.fromRGB(255, 76, 76)
+X.BackgroundTransparency = 0.250
+X.BorderColor3 = Color3.fromRGB(126, 66, 66)
+X.BorderSizePixel = 2
+X.Position = UDim2.new(0.348531932, 0, 0.878128767, 0)
+X.Size = UDim2.new(0, 70, 0, 17)
+X.Font = Enum.Font.SourceSansBold
+X.Text = "X"
+X.TextColor3 = Color3.fromRGB(0, 0, 0)
+X.TextSize = 25.000
+
+Short_InfoReqs.Name = "Short_InfoReqs"
+Short_InfoReqs.Parent = TallPlusShort
+Short_InfoReqs.BackgroundColor3 = Color3.fromRGB(121, 121, 121)
+Short_InfoReqs.BackgroundTransparency = 0.300
+Short_InfoReqs.BorderColor3 = Color3.fromRGB(84, 84, 84)
+Short_InfoReqs.BorderSizePixel = 5
+Short_InfoReqs.Position = UDim2.new(0.405446202, 0, 0.402743101, 0)
+Short_InfoReqs.Size = UDim2.new(0, 245, 0, 156)
+Short_InfoReqs.Visible = false
+Short_InfoReqs.Draggable = true
+Short_InfoReqs.Active = true
+Short_InfoReqs.Selectable = true
+
+Info_2.Name = "Info"
+Info_2.Parent = Short_InfoReqs
+Info_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Info_2.BackgroundTransparency = 0.300
+Info_2.BorderColor3 = Color3.fromRGB(106, 106, 106)
+Info_2.BorderSizePixel = 3
+Info_2.Position = UDim2.new(0.0461206548, 0, 0.0818786621, 0)
+Info_2.Size = UDim2.new(0, 222, 0, 28)
+Info_2.Font = Enum.Font.Unknown
+Info_2.Text = "Clicking \"Be SHORT\" will make you short. Only click once."
+Info_2.TextColor3 = Color3.fromRGB(79, 79, 79)
+Info_2.TextSize = 13.000
+Info_2.TextWrapped = true
+Info_2.TextScaled = true
+
+Reqs_2.Name = "Reqs"
+Reqs_2.Parent = Short_InfoReqs
+Reqs_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Reqs_2.BackgroundTransparency = 0.300
+Reqs_2.BorderColor3 = Color3.fromRGB(107, 107, 107)
+Reqs_2.BorderSizePixel = 3
+Reqs_2.Position = UDim2.new(0.0461206548, 0, 0.325468391, 0)
+Reqs_2.Size = UDim2.new(0, 222, 0, 77)
+Reqs_2.Font = Enum.Font.Unknown
+Reqs_2.Text = "Avatar Scale Requirements: HEIGHT 90%, WIDTH 70%, HEAD 100%, PROPORTIONS 30%, BODY  TYPE  0 to 20%"
+Reqs_2.TextColor3 = Color3.fromRGB(115, 9, 9)
+Reqs_2.TextSize = 18.000
+Reqs_2.TextWrapped = true
+Reqs_2.TextScaled = true
+
+X_2.Name = "X"
+X_2.Parent = Short_InfoReqs
+X_2.BackgroundColor3 = Color3.fromRGB(255, 76, 76)
+X_2.BackgroundTransparency = 0.300
+X_2.BorderColor3 = Color3.fromRGB(126, 66, 66)
+X_2.BorderSizePixel = 2
+X_2.Position = UDim2.new(0.352613539, 0, 0.862977266, 0)
+X_2.Size = UDim2.new(0, 70, 0, 17)
+X_2.Font = Enum.Font.SourceSansBold
+X_2.Text = "X"
+X_2.TextColor3 = Color3.fromRGB(0, 0, 0)
+X_2.TextSize = 25.000
+
+BTW.Name = "BTW"
+BTW.Parent = TallPlusShort
+BTW.BackgroundColor3 = Color3.fromRGB(185, 185, 185)
+BTW.BackgroundTransparency = 0.500
+BTW.Position = UDim2.new(0.41376701, 0, 0.102244392, 0)
+BTW.Size = UDim2.new(0, 227, 0, 152)
+BTW.Draggable = true
+BTW.Active = true
+BTW.Selectable = true
+
+TextLabel.Parent = BTW
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 0.300
+TextLabel.Position = UDim2.new(0.0293509196, 0, 0.17341052, 0)
+TextLabel.Size = UDim2.new(0, 212, 0, 87)
+TextLabel.Font = Enum.Font.RobotoMono
+TextLabel.Text = "Btw, few games support the proportions required for this to work, and some games already patched this. As for the GUI, most of it is draggable, okay have fun"
+TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 12.000
+TextLabel.TextWrapped = true
+
+X_3.Name = "X"
+X_3.Parent = BTW
+X_3.BackgroundColor3 = Color3.fromRGB(255, 76, 76)
+X_3.BackgroundTransparency = 0.300
+X_3.BorderColor3 = Color3.fromRGB(126, 66, 66)
+X_3.BorderSizePixel = 2
+X_3.Position = UDim2.new(0.0842148066, 0, 0.817508578, 0)
+X_3.Size = UDim2.new(0, 188, 0, 18)
+X_3.Font = Enum.Font.SourceSansBold
+X_3.Text = "Close"
+X_3.TextColor3 = Color3.fromRGB(0, 0, 0)
+X_3.TextSize = 18.000
+
+TextLabel_2.Parent = BTW
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.BackgroundTransparency = 1.000
+TextLabel_2.Position = UDim2.new(0.0799883232, 0, 0.0287111178, 0)
+TextLabel_2.Size = UDim2.new(0, 200, 0, 19)
+TextLabel_2.Font = Enum.Font.SourceSansBold
+TextLabel_2.Text = "! IMPORTANT !"
+TextLabel_2.TextColor3 = Color3.fromRGB(77, 0, 0)
+TextLabel_2.TextSize = 25.000
+
+-- Scripts:
+
+local function XAZZP_fake_script() -- ShrinkInfo.LocalScript 
+	local script = Instance.new('LocalScript', ShrinkInfo)
+
+	script.Parent.MouseButton1Down:Connect(function()
+		script.Parent.Parent.Parent.Short_InfoReqs.Visible = true
+	end)
+end
+coroutine.wrap(XAZZP_fake_script)()
+local function VXZWQHB_fake_script() -- GrowInfo.LocalScript 
+	local script = Instance.new('LocalScript', GrowInfo)
+
+	script.Parent.MouseButton1Down:Connect(function()
+		script.Parent.Parent.Parent.Tall_InfoReqs.Visible = true
+	end)
+	
+end
+coroutine.wrap(VXZWQHB_fake_script)()
+local function OVWO_fake_script() -- hideshowbutton.toggle 
+	local script = Instance.new('LocalScript', hideshowbutton)
+
+	script.Parent.MouseButton1Down:Connect(function()
+		script.Parent.Parent.Parent.Whol.Visible = not script.Parent.Parent.Parent.Whol.Visible
+	end)
+	
+end
+coroutine.wrap(OVWO_fake_script)()
+local function FGTCDJX_fake_script() -- ExtraStuff.toggle 
+	local script = Instance.new('LocalScript', ExtraStuff)
+
+	script.Parent.MouseButton1Down:Connect(function()
+		script.Parent.Parent.Parent.ExtraFrame.Visible = not script.Parent.Parent.Parent.ExtraFrame.Visible
+	end)
+	
+end
+coroutine.wrap(FGTCDJX_fake_script)()
+local function KLDL_fake_script() -- X.LocalScript 
+	local script = Instance.new('LocalScript', X)
+
+	script.Parent.MouseButton1Down:Connect(function()
+		script.Parent.Parent.Visible = false
+	end)
+	
+end
+coroutine.wrap(KLDL_fake_script)()
+local function EDLYTJK_fake_script() -- X_2.LocalScript 
+	local script = Instance.new('LocalScript', X_2)
+
+	script.Parent.MouseButton1Down:Connect(function()
+		script.Parent.Parent.Visible = false
+	end)
+	
+end
+coroutine.wrap(EDLYTJK_fake_script)()
+local function FPREGUR_fake_script() -- X_3.LocalScript 
+	local script = Instance.new('LocalScript', X_3)
+
+	script.Parent.MouseButton1Down:Connect(function()
+		script.Parent.Parent.Visible = false
+	end)
+	
+end
+coroutine.wrap(FPREGUR_fake_script)()
